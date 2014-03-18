@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
 
-  mount Carrierwave::Engine => "/carrierwave"
+  mount NoCms::Admin::Engine => "/admin"
+  mount NoCms::Admin::Carrierwave::Engine => "/admin"
 end
