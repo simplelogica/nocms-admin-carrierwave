@@ -1,5 +1,7 @@
 <div class="row">
-  <%= f.fields_for :translation, f.object.translation do |f_translation|%>
+  <%= f.fields_for :translations, [f.object.translation] do |f_translation|%>
+    <%= f_translation.hidden_field :locale %>
+
     <%= f_translation.file_field :attachment %>
     <%= f_translation.hidden_field :attachment_cache %>
   <% end %>
