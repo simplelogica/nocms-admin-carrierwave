@@ -1,0 +1,8 @@
+<ul>
+<% @attachments.each do |attachment| %>
+  <li>
+    <%= image_tag(attachment.translation.attachment_url) if attachment.translation.attachment? %>
+    <%= link_to attachment.attachment.filename, edit_attachment_path(attachment) %>
+  </li>
+<% end %>
+</ul>
