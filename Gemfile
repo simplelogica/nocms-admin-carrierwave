@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+gem "nocms-carrierwave", git: 'https://github.com/simplelogica/nocms-carrierwave.git', branch: 'master'
+gem "nocms-admin", git: 'https://github.com/simplelogica/nocms-admin.git', branch: 'master'
+
 # Declare your gem's dependencies in carrierwave.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
