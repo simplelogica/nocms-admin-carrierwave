@@ -3,3 +3,9 @@ en:
     admin:
       menu_items:
         carrierwave: Attachments
+  no_cms:
+    admin:
+      carrierwave:
+        attachments:
+          toolbar_right:
+            submit: Save
