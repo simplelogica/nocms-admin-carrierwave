@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "nocms-carrierwave", git: 'https://github.com/simplelogica/nocms-carrierwave.git', branch: 'master'
+gem "nocms-carrierwave", git: 'https://github.com/simplelogica/nocms-carrierwave.git', branch: 'features/minimagick'
 gem "nocms-admin", git: 'https://github.com/simplelogica/nocms-admin.git', branch: 'master'
 
 # Declare your gem's dependencies in carrierwave.gemspec.
