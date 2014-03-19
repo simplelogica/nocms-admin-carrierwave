@@ -7,6 +7,8 @@ en:
     admin:
       carrierwave:
         attachments:
+          attachment_listing_item:
+            destroy: Delete
           create:
             success: "Attachment has been created"
             error: "Some error was found and the attachment couldn't be created"
