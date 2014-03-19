@@ -3,23 +3,11 @@
 <% end %>
 
 <% content_for :second_menu do %>
-
-<ul>
-<% @attachments.each do |attachment| %>
-  <li>
-    <%= image_tag(attachment.translation.attachment_url, class: 'preview') if attachment.attachment.image? %>
-    <%= link_to attachment.attachment.filename, edit_attachment_path(attachment) %>
-  </li>
-<% end %>
-</ul>
+  <%= content_tag :ul do %>
+    <%= render partial: 'attachment_listing_item', collection: @attachments, as: 'attachment' %>
+  <% end unless @attachments.blank? %>
 <% end %>
 
-
-<ul>
-<% @attachments.each do |attachment| %>
-  <li>
-    <%= image_tag(attachment.translation.attachment_url) if attachment.attachment.image? %>
-    <%= link_to attachment.attachment.filename, edit_attachment_path(attachment) %>
-  </li>
+<%= content_tag :ul do %>
+  <%= render partial: 'attachment_listing_item', collection: @attachments, as: 'attachment' %>
 <% end %>
-</ul>
