@@ -1,7 +1,24 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'no_cms/admin/carrierwave/application' %>
+<% end %>
+
+<% content_for :second_menu do %>
+
 <ul>
 <% @attachments.each do |attachment| %>
   <li>
-    <%= image_tag(attachment.translation.attachment_url) if attachment.translation.attachment? %>
+    <%= image_tag(attachment.translation.attachment_url, class: 'preview') if attachment.attachment.image? %>
+    <%= link_to attachment.attachment.filename, edit_attachment_path(attachment) %>
+  </li>
+<% end %>
+</ul>
+<% end %>
+
+
+<ul>
+<% @attachments.each do |attachment| %>
+  <li>
+    <%= image_tag(attachment.translation.attachment_url) if attachment.attachment.image? %>
     <%= link_to attachment.attachment.filename, edit_attachment_path(attachment) %>
   </li>
 <% end %>
