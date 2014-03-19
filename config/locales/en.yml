@@ -3,3 +3,12 @@ en:
     admin:
       menu_items:
         carrierwave: Attachments
+  no_cms:
+    admin:
+      carrierwave:
+        attachments:
+          create:
+            success: "Attachment has been created"
+            error: "Some error was found and the attachment couldn't be created"
+          toolbar_right:
+            submit: Save
