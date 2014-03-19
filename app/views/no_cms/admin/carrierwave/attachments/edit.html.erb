@@ -1,0 +1,18 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'no_cms/admin/carrierwave/application' %>
+<% end %>
+
+<% content_for :second_menu do %>
+  <%= content_tag :ul do %>
+    <%= render partial: 'attachment_listing_item', collection: @attachments, as: 'attachment' %>
+  <% end unless @attachments.blank? %>
+<% end %>
+
+<%= no_cms_admin_form_for @attachment, multipart: true do |f| %>
+  <%= render partial: 'no_cms/admin/shared/toolbar', locals: { f: f } %>
+  <div class="content">
+    <%= render 'no_cms/admin/shared/log_messages' %>
+    <%= render 'form', f: f %>
+  </div>
+
+<% end %>
