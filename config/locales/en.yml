@@ -1,10 +1,6 @@
 en:
   no_cms:
     admin:
-      menu_items:
-        carrierwave: Attachments
-  no_cms:
-    admin:
       carrierwave:
         attachments:
           attachment_listing_item:
@@ -17,4 +13,6 @@ en:
           update:
             success: "Attachment has been updated"
             error: "Some error was found and the attachment couldn't be updated"
+      menu_items:
+        carrierwave: Attachments
 
