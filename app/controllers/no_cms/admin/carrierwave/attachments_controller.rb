@@ -32,6 +32,15 @@ module NoCms::Admin::Carrierwave
       end
     end
 
+    def destroy
+      if @attachment.destroy
+        @logger.info(I18n.t('.no_cms.admin.carrierwave.attachments.destroy.success'), true)
+      else
+        @logger.error(I18n.t('.no_cms.admin.carrierwave.attachments.destroy.error'), true)
+      end
+      redirect_to attachments_path
+    end
+
     private
 
     def load_attachments
