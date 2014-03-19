@@ -9,6 +9,7 @@ module NoCms::Admin::Carrierwave
 
     def new
       @attachment = NoCms::Carrierwave::Attachment.new
+      @attachment.translation
     end
 
     def create
