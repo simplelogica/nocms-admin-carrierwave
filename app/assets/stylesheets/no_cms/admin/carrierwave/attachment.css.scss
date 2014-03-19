@@ -18,17 +18,27 @@
 }
 
 #content-area {
-    li {
-      float: left;
-      margin: 0 20px 0 0;
+  li {
+    float: left;
+    margin: 0 20px 0 0;
 
-      .preview {
-        width: 128px;
-        margin: 0 10px 0 0;
-      }
-
-      a {
-        display: block;
-      }
+    .preview {
+      width: 128px;
+      margin: 0 10px 0 0;
     }
+
+    a {
+      display: block;
+    }
+  }
+
+  .row {
+    .preview {
+      width: 64px;
+      height: 64px;
+      float:left;
+      margin: 0 10px 0 0;
+    }
+  }
+
 }

@@ -14,3 +14,7 @@ en:
             error: "Some error was found and the attachment couldn't be created"
           toolbar_right:
             submit: Save
+          update:
+            success: "Attachment has been updated"
+            error: "Some error was found and the attachment couldn't be updated"
+
