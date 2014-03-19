@@ -3,6 +3,7 @@ require_dependency "no_cms/admin/carrierwave/application_controller"
 module NoCms::Admin::Carrierwave
   class AttachmentsController < ApplicationController
 
+    before_filter :load_menu_section
     before_filter :load_attachment, only: [:edit, :update, :destroy]
     before_filter :load_attachments, only: [:index, :new, :edit]
 
@@ -42,6 +43,10 @@ module NoCms::Admin::Carrierwave
     end
 
     private
+
+    def load_menu_section
+      @current_section = 'carrierwave'
+    end
 
     def load_attachments
       @attachments = NoCms::Carrierwave::Attachment.all
