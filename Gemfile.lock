@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/simplelogica/nocms-carrierwave.git
-  revision: 4e28a0e67db413291911a5d5e9d9cb213a8fb5e0
+  revision: 3a8afd959e2b8274c7a0397ea35f62fd67626364
   branch: master
   specs:
     nocms-carrierwave (0.0.1)
