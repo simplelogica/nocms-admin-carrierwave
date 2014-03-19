@@ -8,12 +8,6 @@
   <% end unless @attachments.blank? %>
 <% end %>
 
-
-<ul>
-<% @attachments.each do |attachment| %>
-  <li>
-    <%= image_tag(attachment.translation.attachment_url) if attachment.attachment.image? %>
-    <%= link_to attachment.attachment.filename, edit_attachment_path(attachment) %>
-  </li>
+<%= content_tag :ul do %>
+  <%= render partial: 'attachment_listing_item', collection: @attachments, as: 'attachment' %>
 <% end %>
-</ul>
