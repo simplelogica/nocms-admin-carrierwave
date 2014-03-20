@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.description = "Gem with custom back for nocms-carrierwave gem"
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
-  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 4.0", ">= 4.0.4"
   s.add_dependency "nocms-carrierwave", '~> 0.0', '>= 0.0.1'
