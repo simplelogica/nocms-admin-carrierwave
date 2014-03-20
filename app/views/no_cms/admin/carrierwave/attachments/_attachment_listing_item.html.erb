@@ -1,7 +1,7 @@
 <% current ||= nil %>
 <li <%= raw "class='#{attachment_listing_item_classes(attachment, current).join(' ')}'"%>>
   <%= image_tag(attachment.translation.attachment_url, class: 'preview') if attachment.attachment.image? %>
-  <%= link_to attachment.attachment.filename, edit_attachment_path(attachment)%>
+  <%= link_to attachment.name, edit_attachment_path(attachment)%>
   <div class="mo">
     <%= button_to '', attachment_path(attachment), method: :delete, class: "ico-mini-delete", title: t('.destroy') %>
   </div>

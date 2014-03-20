@@ -58,7 +58,7 @@ module NoCms::Admin::Carrierwave
     end
 
     def attachment_params
-      params.require(:attachment).permit(translations_attributes: [:id, :locale, :attachment, :attachment_cache])
+      params.require(:attachment).permit(translations_attributes: [:id, :locale, :name, :description, :attachment, :attachment_cache])
     end
 
   end

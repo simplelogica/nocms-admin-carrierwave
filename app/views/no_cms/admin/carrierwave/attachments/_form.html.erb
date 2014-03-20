@@ -1,10 +1,20 @@
-<div class="row">
-  <%= f.fields_for :translations do |f_translation|%>
-    <%= f_translation.hidden_field :locale %>
+<%= f.fields_for :translations do |f_translation|%>
+  <%= f_translation.hidden_field :locale if f_translation.object.new_record? %>
 
+  <div class="row">
+    <%= f_translation.label :name %>
+    <%= f_translation.text_field :name %>
+  </div>
+
+  <div class="row">
+    <%= f_translation.label :description %>
+    <%= f_translation.text_area :description %>
+  </div>
+
+  <div class="row">
     <%= link_to(image_tag(f_translation.object.attachment_url, class: 'preview'), f_translation.object.attachment_url, target: '_blank') if f_translation.object.attachment.image? %>
 
     <%= f_translation.file_field :attachment %>
     <%= f_translation.hidden_field :attachment_cache %>
-  <% end %>
-</div>
+  </div>
+<% end %>
