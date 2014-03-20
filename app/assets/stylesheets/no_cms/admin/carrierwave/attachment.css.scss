@@ -10,7 +10,6 @@
       .preview {
         width: 64px;
         height: 64px;
-        float:left;
         margin: 0 10px 0 0;
       }
     }
@@ -19,17 +18,22 @@
 
 #content-area {
   li {
+
     float: left;
     margin: 0 20px 0 0;
+    text-align: center;
 
     .preview {
       width: 128px;
       margin: 0 10px 0 0;
+      display: block;
     }
 
     a {
-      display: block;
+      color: #87949B;
+      text-decoration: none;
     }
+
   }
 
   .row {

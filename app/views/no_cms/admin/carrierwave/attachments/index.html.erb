@@ -11,8 +11,10 @@
 <%= content_tag :ul do %>
   <% @attachments.each do |attachment| %>
     <li <%= raw "class='#{attachment_listing_item_classes(attachment).join(' ')}'"%>>
-      <%= image_tag(attachment.translation.attachment_url, class: 'preview') if attachment.attachment.image? %>
-      <%= link_to attachment.attachment.filename, edit_attachment_path(attachment)%>
+      <%= link_to edit_attachment_path(attachment) do %>
+        <%= image_tag(attachment.translation.attachment_url, class: 'preview') if attachment.attachment.image? %>
+        <%= attachment.name %>
+      <% end %>
     </li>
   <% end %>
 <% end unless @attachments.blank? %>
