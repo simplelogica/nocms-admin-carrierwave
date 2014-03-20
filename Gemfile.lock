@@ -9,8 +9,8 @@ GIT
 
 GIT
   remote: https://github.com/simplelogica/nocms-carrierwave.git
-  revision: 422d8ca9fe723d31ad650b1e8430f1b783e2d104
-  branch: features/minimagick
+  revision: dc8d13684beefe7c3ceb71957dcd1733e757a329
+  branch: master
   specs:
     nocms-carrierwave (0.0.1)
       carrierwave (~> 0.10, >= 0.10.0)
