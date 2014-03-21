@@ -15,17 +15,17 @@ module NoCms::Admin::Carrierwave
     def create
       @attachment = NoCms::Carrierwave::Attachment.new attachment_params
       if @attachment.save!
-        @logger.info I18n.t('.no_cms.admin.carrierwave.attachments.create.success'), true
+        @nocms_logger.info I18n.t('.no_cms.admin.carrierwave.attachments.create.success'), true
         redirect_to action: :index
       else
-        @logger.error I18n.t('.no_cms.admin.carrierwave.attachments.create.error')
+        @nocms_logger.error I18n.t('.no_cms.admin.carrierwave.attachments.create.error')
         render :new
       end
     end
 
     def update
       if @attachment.update_attributes attachment_params
-        @logger.info(I18n.t('.no_cms.admin.carrierwave.attachments.update.success'), true)
+        @nocms_logger.info(I18n.t('.no_cms.admin.carrierwave.attachments.update.success'), true)
         redirect_to action: :edit
       else
         @attachment.error(I18n.t('.no_cms.admin.carrierwave.attachments.update.error'))
@@ -36,9 +36,9 @@ module NoCms::Admin::Carrierwave
 
     def destroy
       if @attachment.destroy
-        @logger.info(I18n.t('.no_cms.admin.carrierwave.attachments.destroy.success'), true)
+        @nocms_logger.info(I18n.t('.no_cms.admin.carrierwave.attachments.destroy.success'), true)
       else
-        @logger.error(I18n.t('.no_cms.admin.carrierwave.attachments.destroy.error'), true)
+        @nocms_logger.error(I18n.t('.no_cms.admin.carrierwave.attachments.destroy.error'), true)
       end
       redirect_to attachments_path
     end
