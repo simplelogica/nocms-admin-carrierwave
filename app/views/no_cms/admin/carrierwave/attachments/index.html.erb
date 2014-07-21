@@ -12,7 +12,7 @@
   <% @attachments.each do |attachment| %>
     <li <%= raw "class='#{attachment_listing_item_classes(attachment).join(' ')}'"%>>
       <%= link_to edit_attachment_path(attachment) do %>
-        <%= image_tag(attachment.translation.attachment_url, class: 'preview') if attachment.attachment.image? %>
+        <%= image_tag(attachment.translation.attachment_url, class: 'preview') if attachment.is_image? %>
         <%= attachment.name %>
       <% end %>
     </li>
