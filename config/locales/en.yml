@@ -8,6 +8,8 @@ en:
           create:
             success: "Attachment has been created"
             error: "Some error was found and the attachment couldn't be created"
+          edit:
+            url: URL
           toolbar_right:
             submit: Save
           update:
