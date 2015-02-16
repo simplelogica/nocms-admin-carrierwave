@@ -1,19 +1,24 @@
 NoCms::Admin::FormBuilder.class_eval do
 
   def carrierwave_attachment carrierwave_field
+    html_result = ''
     fields_for carrierwave_field, object.send(carrierwave_field) do |f_carrierwave_field|
       f_carrierwave_field.fields_for_translations do |f_translation|
 
-        @template.concat @template.image_tag(f_translation.object.attachment_url) if f_translation.object.attachment?
+        html_result += @template.image_tag(f_translation.object.attachment_url) if f_translation.object.attachment?
 
-        @template.concat f_translation.file_field :attachment
+        html_result += f_translation.file_field :attachment
 
-        @template.concat f_translation.label :remove_attachment do
-          f_translation.check_box :remove_attachment
-          t("activerecord.attributes.#{object.class.underscore}.remove_#{carrierwave_field}_attachment")
-        end if f_translation.object.attachment?
+        if f_translation.object.attachment?
+          html_result += f_translation.label :remove_attachment do
+            f_translation.check_box(:remove_attachment) +
+            I18n.t("activerecord.attributes.#{object.class.name.underscore}.remove_#{carrierwave_field}_attachment")
+          end
+        end
       end
+      @template.raw html_result
     end
+
   end
 
 end
