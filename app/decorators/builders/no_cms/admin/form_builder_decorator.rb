@@ -5,6 +5,8 @@ NoCms::Admin::FormBuilder.class_eval do
     fields_for carrierwave_field, object.send(carrierwave_field) do |f_carrierwave_field|
       f_carrierwave_field.fields_for_translations do |f_translation|
 
+        html_result +=  f_translation.hidden_field :locale
+
         html_result += @template.image_tag(f_translation.object.attachment_url) if f_translation.object.attachment?
 
         html_result += f_translation.file_field :attachment
